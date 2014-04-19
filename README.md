@@ -16,13 +16,13 @@ class Members extends StaticAccess {
 ```
 
 StaticAccess sınıfımızı genişleterek Members adında yeni bir sınıf yarattık. Peki bu kullanım için yeterli mi? Değil.
-StaticAccess çalışmasına devam edebilmesi için private olmayan, public ya da protected olarak tanımlanmış instance adında bir özelliğe ihtiyaç duyar. Protected yapmanız sizin için yararınızadır.
+StaticAccess çalışmasına devam edebilmesi için private olmayan, public ya da protected olarak tanımlanmış instance adında statik bir özelliğe ihtiyaç duyar. Protected yapmanız sizin için yararınızadır.
 
 
 ```php
 class Members extends StaticAccess {
 
-  protected $instance;
+  protected static $instance;
 
 }
 ```
@@ -33,7 +33,7 @@ Evet, artık StaticAccess kısmen kullanılabilir bir durumdadır. Statik olmaya
 ```php
 class Members extends StaticAccess {
 
-  protected $instance;
+  protected static $instance;
   
   public function staticGetUsers()
   {
@@ -54,7 +54,7 @@ Yine aynı sınıf içerisinde bu metodumuza kendi ismiyle erişebiliriz. Çağ�
 ```php
 class Members extends StaticAccess {
 
-  protected $instance;
+  protected static $instance;
   
   public function staticGetUsers()
   {
