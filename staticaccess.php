@@ -17,12 +17,12 @@ class StaticAccess {
     public static function getInstance()
     {
 
-        if ( !static::$instance )
+        if ( static::$instance )
         {
-            static::$instance = new static();
+            return static::$instance;
         }
-
-        return static::$instance;
+        
+        return static::$instance = new static();
 
     }
 
