@@ -23,13 +23,13 @@ trait StaticAccessTrait {
      */
     public static function getInstance()
     {
-
-        if ( !self::$instance )
+        
+        if ( self::$instance )
         {
-            self::$instance = new static();
+            return self::$instance;
         }
-
-        return self::$instance;
+        
+        return self::$instance = new static();
 
     }
 
