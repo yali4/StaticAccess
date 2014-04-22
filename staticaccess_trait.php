@@ -1,13 +1,20 @@
 <?php
 
 /**
- * StaticAccess Class for PHP OOP
+ * StaticAccess Trait for PHP OOP
  * Creator: Yalçın CEYLAN
  * Github: http://github.com/yali4/
  * Website: http://yalcinceylan.net
  * License: MIT <http://opensource.org/licenses/mit-license.php>
  */
-class StaticAccess {
+trait StaticAccessTrait {
+
+    /**
+     * Örneği tutmak için.
+     *
+     * @var
+     */
+    private static $instance;
 
     /**
      * Örneği döndürmek için.
@@ -16,13 +23,13 @@ class StaticAccess {
      */
     public static function getInstance()
     {
-
-        if ( static::$instance )
+        
+        if ( self::$instance )
         {
-            return static::$instance;
+            return self::$instance;
         }
         
-        return static::$instance = new static();
+        return self::$instance = new static();
 
     }
 
