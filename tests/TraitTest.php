@@ -2,8 +2,8 @@
 
 require '../staticaccess_trait.php';
 
-class MembersStaticAccessTest extends \PHPUnit_Framework_TestCase {
-
+class MembersStaticAccessTest extends PHPUnit_Framework_TestCase
+{
 	public function testGetUsers()
 	{
 		$this->assertEquals(array('Pichler', 'Steiner', 'Bauer', 'Huber'), Members::getUsers());
@@ -11,8 +11,18 @@ class MembersStaticAccessTest extends \PHPUnit_Framework_TestCase {
 
 	public function testAllUsers()
 	{
-		$this->assertEquals(array('Pichler', 'Steiner', 'Bauer', 'Huber'), Members::getUsers());
+		$this->assertEquals(array('Pichler', 'Steiner', 'Bauer', 'Huber'), Members::allUsers());
 	}
+
+    public function testGetInstance()
+    {
+        $this->assertInstanceOf('Members', Members::getInstance());
+    }
+
+    public function testUserCount()
+    {
+        $this->assertCount(4, Members::getUsers());
+    }
 }
 
 class Members {
