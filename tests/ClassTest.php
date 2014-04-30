@@ -4,15 +4,15 @@ require '../staticaccess.php';
 
 class MembersStaticAccessTest extends PHPUnit_Framework_TestCase
 {
-	public function testGetUsers()
-	{
-		$this->assertEquals(array('Pichler', 'Steiner', 'Bauer', 'Huber'), Members::getUsers());
-	}
+    public function testGetUsers()
+    {
+        $this->assertEquals(array('Pichler', 'Steiner', 'Bauer', 'Huber'), Members::getUsers());
+    }
 
-	public function testAllUsers()
-	{
-		$this->assertEquals(array('Pichler', 'Steiner', 'Bauer', 'Huber'), Members::allUsers());
-	}
+    public function testAllUsers()
+    {
+        $this->assertEquals(array('Pichler', 'Steiner', 'Bauer', 'Huber'), Members::allUsers());
+    }
 
     public function testGetInstance()
     {
